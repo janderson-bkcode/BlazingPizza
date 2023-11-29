@@ -1,12 +1,13 @@
 ﻿@page "/checkout"
 @using BlazingPizza.Services
+@using BlazingPizza.Model
 @inject OrderState OrderState
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
 
 <div class="main">
 
-    <EditForm Model=Order.DeliveryAddress OnSubmit=CheckSubmission>
+    <EditForm Model=Order.DeliveryAddress OnValidSubmit=CheckSubmission OnInvalidSubmit="ShowError">
         <div class="checkout-cols">
             <div class="checkout-order-details">
                 <h4>Review order</h4>
@@ -24,6 +25,8 @@
         <button class="checkout-button btn btn-warning" disabled=@isSubmitting>
             Place order
         </button>
+      @*   <ValidationSummary />  Mensagens de validação genéricas*@
+        <DataAnnotationsValidator />
     </EditForm>
 </div>
 
@@ -36,20 +39,14 @@
 
     async Task PlaceOrder()
     {
-    //    isSubmitting = true;
-        var response = await HttpClient.PostAsJsonAsync($"{NavigationManager.BaseUri}orders", OrderState.Order);
-        var newOrderId = await response.Content.ReadFromJsonAsync<int>();
+        isError = false;
+        isSubmitting = true;
+        var response = await HttpClient.PostAsJsonAsync(
+            $"{NavigationManager.BaseUri}orders", OrderState.Order);
+        var newOrderId= await response.Content.ReadFromJsonAsync<int>();
         OrderState.ResetOrder();
-      //  NavigationManager.NavigateTo("/myorders");
         NavigationManager.NavigateTo($"myorders/{newOrderId}");
     }
-
-    // private async Task CheckSubmission()
-    // {
-    //     isSubmitting = true;
-    //     await PlaceOrder();
-    //     isSubmitting = false;
-    // }
 
     private async Task CheckSubmission(EditContext editContext)
     {
@@ -63,5 +60,9 @@
             await PlaceOrder();
         }
         isSubmitting = false;
+    }
+    protected void ShowError()
+    {
+        isError = true;
     }
 }   
