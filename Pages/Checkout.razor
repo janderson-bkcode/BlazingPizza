@@ -19,10 +19,10 @@
                 @if (isError) {
                     <div class="alert alert-danger">Please enter a name and address.</div>
                 }
-                <AddressEditor Address=Order.DeliveryAddress />
+                <AddressEditor Address= "Order.DeliveryAddress" />
             </div>
         </div>
-        <button class="checkout-button btn btn-warning" disabled=@isSubmitting>
+        <button class="checkout-button btn btn-warning" disabled= "@isSubmitting">
             Place order
         </button>
       @*   <ValidationSummary />  Mensagens de validação genéricas*@
