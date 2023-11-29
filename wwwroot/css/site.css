@@ -423,7 +423,7 @@ form {
         margin: 0 1.5rem;
     }
 
-    .dialog-body input, .dialog-body select {
+    .dialog-body InputText, .dialog-body select {
         flex-grow: 1;
         width: unset;
     }
@@ -561,17 +561,17 @@ a.sign-in {
         border-color: #fff2cc;
     }
 
-input[type=range] {
+InputText[type=range] {
     -webkit-appearance: none;
     margin: 7.1px 0;
     height: 21px;
 }
 
-    input[type=range]:focus {
+    InputText[type=range]:focus {
         outline: none;
     }
 
-    input[type=range]::-webkit-slider-runnable-track {
+    InputText[type=range]::-webkit-slider-runnable-track {
         width: 100%;
         height: 5.8px;
         cursor: pointer;
@@ -581,7 +581,7 @@ input[type=range] {
         border: 0px solid #010101;
     }
 
-    input[type=range]::-webkit-slider-thumb {
+    InputText[type=range]::-webkit-slider-thumb {
         box-shadow: 0.9px 0.9px 1px rgba(0, 0, 49, 0.43), 0px 0px 0.9px rgba(0, 0, 75, 0.43);
         border: 0px solid #00001e;
         height: 20px;
@@ -593,11 +593,11 @@ input[type=range] {
         margin-top: -7.1px;
     }
 
-    input[type=range]:focus::-webkit-slider-runnable-track {
+    InputText[type=range]:focus::-webkit-slider-runnable-track {
         background: #e1e1e1;
     }
 
-    input[type=range]::-moz-range-track {
+    InputText[type=range]::-moz-range-track {
         width: 100%;
         height: 5.8px;
         cursor: pointer;
@@ -607,7 +607,7 @@ input[type=range] {
         border: 0px solid #010101;
     }
 
-    input[type=range]::-moz-range-thumb {
+    InputText[type=range]::-moz-range-thumb {
         box-shadow: 0.9px 0.9px 1px rgba(0, 0, 49, 0.43), 0px 0px 0.9px rgba(0, 0, 75, 0.43);
         border: 0px solid #00001e;
         height: 20px;
@@ -617,7 +617,7 @@ input[type=range] {
         cursor: pointer;
     }
 
-    input[type=range]::-ms-track {
+    InputText[type=range]::-ms-track {
         width: 100%;
         height: 5.8px;
         cursor: pointer;
@@ -626,21 +626,21 @@ input[type=range] {
         color: transparent;
     }
 
-    input[type=range]::-ms-fill-lower {
+    InputText[type=range]::-ms-fill-lower {
         background: #d7d7d7;
         border: 0px solid #010101;
         border-radius: 2.6px;
         box-shadow: 0px 0px 1px #000000, 0px 0px 0px #0d0d0d;
     }
 
-    input[type=range]::-ms-fill-upper {
+    InputText[type=range]::-ms-fill-upper {
         background: #dcdcdc;
         border: 0px solid #010101;
         border-radius: 2.6px;
         box-shadow: 0px 0px 1px #000000, 0px 0px 0px #0d0d0d;
     }
 
-    input[type=range]::-ms-thumb {
+    InputText[type=range]::-ms-thumb {
         box-shadow: 0.9px 0.9px 1px rgba(0, 0, 49, 0.43), 0px 0px 0.9px rgba(0, 0, 75, 0.43);
         border: 0px solid #00001e;
         height: 20px;
@@ -708,7 +708,7 @@ input[type=range] {
         flex-grow: 1;
     }
 
-    .form-field input {
+    .form-field InputText {
         width: 100%;
     }
 
